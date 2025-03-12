@@ -1,57 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 12:20:08 by dximenes          #+#    #+#             */
-/*   Updated: 2025/03/11 20:38:30 by dximenes         ###   ########.fr       */
+/*   Created: 2025/03/07 10:09:34 by dximenes          #+#    #+#             */
+/*   Updated: 2025/03/12 12:45:37 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	str_len(char *str)
+int	*ft_range(int min, int max)
 {
+	int	*array;
+	int	size;
 	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		i;
-	int		lsrc;
-	char	*dest;
-
-	lsrc = str_len(src);
-	dest = malloc((lsrc + 1) * sizeof(char));
-	if (!dest)
+	if (min >= max)
 		return (0);
-	dest[0] = '\0';
+	size = (max - min);
+	array = malloc(size * sizeof(int));
+	if (!array)
+		return (0);
 	i = 0;
-	while (i < lsrc)
+	while (i < size)
 	{
-		dest[i] = src[i];
+		array[i] = min;
+		min++;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (array);
 }
 
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	src_my[] = "Suco de Maracuja.";
-	char	*dest_my = ft_strdup(src_my);
-	src_my[3] = 'M';
-	printf("Result of my src => %s\n", src_my);
-	printf("Result of my function => %s\n", dest_my);
-	free(dest_my);
+	int	min = 0;
+	int	max = 10;
+	int	*array = ft_range(min, max);
+	int	size = (max - min);
+
+	int	i = 0;
+	while (i < size)
+	{
+		printf("%d\n", array[i]);
+		i++;
+	}
+	free(array);
+	return (0);
 }
 */
