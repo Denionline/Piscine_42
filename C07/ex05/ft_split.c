@@ -6,7 +6,7 @@
 /*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:46:11 by dximenes          #+#    #+#             */
-/*   Updated: 2025/03/12 19:14:52 by dximenes         ###   ########.fr       */
+/*   Updated: 2025/03/13 10:00:12 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,12 @@ int	count_w(char *str, char *sep)
 	i = 0;
 	if (!*str)
 		return (0);
-	while (!is_sep(str[i], sep))
-		i++;
 	while (i < lstr && str[i + 1] != '\0')
 	{
 		if (is_sep(str[i], sep) && !is_sep(str[i + 1], sep))
 			count++;
 		i++;
 	}
-	if (!is_sep(str[lstr - 1], sep))
-		count--;
 	return (count);
 }
 
@@ -98,8 +94,6 @@ char	**ft_split(char *str, char *charset)
 	arr = malloc((larr = count_w(str, charset) + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	while (!is_sep(*str, charset))
-		str++;
 	i = 0;
 	while (*str)
 	{
@@ -117,16 +111,15 @@ char	**ft_split(char *str, char *charset)
 	arr[i] = 0;
 	return (arr);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	*str = "suco=-=+de++mangae++muito---+-=bom";
-	char	*charset = "-=";
-	char	**result;
-	result = ft_split(str, charset);
-	for (int i = 0; result[i] != 0; i++)
-		printf("%s\n", result[i]);
-	free(result);
-}
-*/
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char	*str = "-----aa-----bb------cc-----dd-----";
+// 	char	*charset = "-";
+// 	char	**result;
+// 	result = ft_split(str, charset);
+// 	for (int i = 0; result[i] != 0; i++)
+// 		printf("%s\n", result[i]);
+// 	free(result);
+// }
