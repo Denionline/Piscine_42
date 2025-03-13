@@ -6,7 +6,7 @@
 /*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 20:58:33 by dximenes          #+#    #+#             */
-/*   Updated: 2025/03/13 12:08:13 by dximenes         ###   ########.fr       */
+/*   Updated: 2025/03/13 12:26:37 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	put_values_on_array(int c_nbr, char *res, char *base_to, int is_n)
 	int		lbase_to;
 	int		lres;
 
-	lres = get_result_size(c_nbr, lbase_to) + is_n;
 	lbase_to = str_len(base_to);
+	lres = get_result_size(c_nbr, lbase_to) + is_n;
 	i = 0;
 	while (i < lres)
 	{
