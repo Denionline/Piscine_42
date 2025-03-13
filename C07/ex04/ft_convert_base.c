@@ -6,7 +6,7 @@
 /*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 20:58:33 by dximenes          #+#    #+#             */
-/*   Updated: 2025/03/12 23:04:21 by dximenes         ###   ########.fr       */
+/*   Updated: 2025/03/13 12:08:13 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,13 @@ int	get_result_size(int nbr, int lbase)
 	return (size);
 }
 
-void	put_values_on_array(int c_nbr, char *res, int lres, char *base_to, int is_n)
+void	put_values_on_array(int c_nbr, char *res, char *base_to, int is_n)
 {
 	int		i;
 	int		lbase_to;
+	int		lres;
 
+	lres = get_result_size(c_nbr, lbase_to) + is_n;
 	lbase_to = str_len(base_to);
 	i = 0;
 	while (i < lres)
@@ -100,7 +102,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	if (!res)
 		return (0);
 	res[0] = 0;
-	put_values_on_array(c_nbr, res, lres, base_to, is_n);
+	put_values_on_array(c_nbr, res, base_to, is_n);
 	rev_str(res, lres, is_n);
 	res[lres] = '\0';
 	return (res);
