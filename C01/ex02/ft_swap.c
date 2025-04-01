@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: denionline <denionline@student.42.fr>      +#+  +:+       +#+        */
+/*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 16:46:37 by denionline        #+#    #+#             */
-/*   Updated: 2025/03/18 16:47:45 by denionline       ###   ########.fr       */
+/*   Created: 2025/02/24 09:44:21 by dximenes          #+#    #+#             */
+/*   Updated: 2025/02/26 13:17:33 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
+	int	x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int	a;
+	int	b;
+
+	a = 5;
+	b = 9;
+	ft_swap(&a, &b);
+	printf("a = %d, b = %d", a, b);
+	return (0);
+}*/

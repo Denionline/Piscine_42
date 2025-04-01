@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: denionline <denionline@student.42.fr>      +#+  +:+       +#+        */
+/*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 16:46:37 by denionline        #+#    #+#             */
-/*   Updated: 2025/03/18 16:47:45 by denionline       ###   ########.fr       */
+/*   Created: 2025/02/21 10:16:53 by dximenes          #+#    #+#             */
+/*   Updated: 2025/02/26 13:01:11 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void	ft_ft(int *nbr)
 {
-	write(1, &c, 1);
+	*nbr = 42;
 }
+/*
+int	main(void)
+{
+	int	var;
+	
+	ft_ft(&var)
+	return (0);
+}*/

@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: denionline <denionline@student.42.fr>      +#+  +:+       +#+        */
+/*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 16:46:37 by denionline        #+#    #+#             */
-/*   Updated: 2025/03/18 16:47:45 by denionline       ###   ########.fr       */
+/*   Created: 2025/02/24 11:40:39 by dximenes          #+#    #+#             */
+/*   Updated: 2025/02/26 13:23:24 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
+/*
+int	main(void)
+{
+	char str[] = "Happines describe what I'm feeling right now :)";
+
+	ft_putstr(str);
+	write(1, "\n", 1);
+	return (0);
+}*/

@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: denionline <denionline@student.42.fr>      +#+  +:+       +#+        */
+/*   By: dximenes <dximenes@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 16:46:37 by denionline        #+#    #+#             */
-/*   Updated: 2025/03/18 16:47:45 by denionline       ###   ########.fr       */
+/*   Created: 2025/02/24 21:01:37 by dximenes          #+#    #+#             */
+/*   Updated: 2025/02/24 21:38:30 by dximenes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_strlen(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char str[] = "Happy";
+
+	printf("%d", ft_strlen(str));	
+	return (0);
+}*/
